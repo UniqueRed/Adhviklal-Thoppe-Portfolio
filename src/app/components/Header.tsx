@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <motion.header
@@ -15,8 +15,8 @@ const Header = () => {
       transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
     >
       <nav className="px-6 py-4 flex justify-between items-center w-full">
-        <motion.a 
-          href="#" 
+        <motion.a
+          href="#"
           className="text-2xl font-bold text-white"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -40,9 +40,9 @@ const Header = () => {
           ))}
         </div>
 
-        <motion.div 
-          className="md:hidden ml-auto" 
-          whileHover={{ scale: 1.05 }} 
+        <motion.div
+          className="md:hidden ml-auto"
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
           <button onClick={() => setIsOpen(!isOpen)} className="text-white">
@@ -60,7 +60,7 @@ const Header = () => {
           transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <nav className="container mx-auto px-6 py-4">
-            {["Projects", "Skills", "Contact"].map((item) => (
+            {["Projects", "Skills"].map((item) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -79,7 +79,7 @@ const Header = () => {
         </motion.div>
       )}
     </motion.header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
