@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 const MatrixRain = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const dropsRef = useRef<number[]>([]); // Store drops persistently
+  const dropsRef = useRef<number[]>([]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -17,24 +17,20 @@ const MatrixRain = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       const columns = Math.floor(canvas.width / 20);
-      dropsRef.current = Array(columns).fill(1); // Reset drops on resize
+      dropsRef.current = Array(columns).fill(1);
     };
 
-    // Set initial size
     setCanvasSize();
 
-    // Binary characters
     const binary = "01";
 
-    // Draw function
     const draw = () => {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; // Dark overlay
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = "rgba(255, 255, 255, 0.2)"; // Green color with reduced opacity
+      ctx.fillStyle = "rgba(255, 255, 255, 0.2)";
       ctx.font = "15px monospace";
 
-      // Loop through drops
       for (let i = 0; i < dropsRef.current.length; i++) {
         const text = binary[Math.floor(Math.random() * binary.length)];
         ctx.fillText(text, i * 20, dropsRef.current[i] * 20);
@@ -47,13 +43,10 @@ const MatrixRain = () => {
       }
     };
 
-    // Animation loop
     const interval = setInterval(draw, 50);
 
-    // Resize event listener
     window.addEventListener("resize", setCanvasSize);
 
-    // Cleanup
     return () => {
       clearInterval(interval);
       window.removeEventListener("resize", setCanvasSize);

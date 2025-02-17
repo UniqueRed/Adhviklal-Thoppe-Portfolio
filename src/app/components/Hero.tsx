@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, BookOpen } from "lucide-react";
-import MatrixRain from "./MatrixRain"; // Import the MatrixRain component
+import MatrixRain from "./MatrixRain";
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState("");

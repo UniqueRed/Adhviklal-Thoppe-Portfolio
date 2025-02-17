@@ -26,6 +26,8 @@ import {
   SiPandas,
   SiNumpy,
   SiOpencv,
+  SiMediapipe,
+  SiOllama,
 } from "react-icons/si";
 import { FaAws, FaJava } from "react-icons/fa";
 import { MdCode } from "react-icons/md";
@@ -81,9 +83,9 @@ const skillCategories = [
       { name: "NumPy", icon: SiNumpy },
       { name: "MatPlotLib", icon: MdCode },
       { name: "OpenCV", icon: SiOpencv },
-      { name: "Ollama", icon: MdCode },
+      { name: "Ollama", icon: SiOllama },
       { name: "Groq", icon: MdCode },
-      { name: "Mediapipe", icon: MdCode },
+      { name: "Mediapipe", icon: SiMediapipe },
     ],
   },
 ];

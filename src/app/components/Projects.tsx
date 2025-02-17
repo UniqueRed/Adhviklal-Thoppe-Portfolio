@@ -19,6 +19,9 @@ import {
   SiSvelte,
   SiJavascript,
   SiPython,
+  SiOpencv,
+  SiMediapipe,
+  SiDocker,
 } from "react-icons/si";
 import { DiHtml5, DiCss3 } from "react-icons/di";
 import { FaAws } from "react-icons/fa";
@@ -38,7 +41,7 @@ const projects: {
     description:
       "A comprehensive event management platform that centralizes active school events, making it easy for teachers to post and students to track and register for opportunities.",
     image: "/project1.jpg",
-    frameworks: ["react", "postgresql", "nodejs", "express", "git", "aws"],
+    frameworks: ["react", "postgresql", "nodejs", "express", "git", "aws", "docker"],
   },
   {
     title: "ML Hand Tracking",
@@ -46,7 +49,7 @@ const projects: {
       "A real-time hand tracking model built with Machine Learning and Computer Vision. The model recognizes gestures using landmark orientation, allowing users to identify a wide range of hand gestures.",
     image: "/project2.jpg",
     github: "https://github.com/UniqueRed/Hand-Tracking",
-    frameworks: ["python", "git"],
+    frameworks: ["python", "opencv", "mediapipe", "git"],
   },
   {
     title: "Symplenote",
@@ -87,16 +90,19 @@ const frameworkIcons = {
   mongodb: SiMongodb,
   postgresql: SiPostgresql,
   github: Github,
-  html: DiHtml5, // HTML
-  css: DiCss3, // CSS
-  js: SiJavascript, // JavaScript
-  git: SiGit, // Git
-  aws: FaAws, // AWS
-  vercel: SiVercel, // Vercel
-  csharp: SiSharp, // C#
-  unity: SiUnity, // Unity
-  svelte: SiSvelte, // Svelte
+  html: DiHtml5,
+  css: DiCss3,
+  js: SiJavascript,
+  git: SiGit,
+  aws: FaAws,
+  vercel: SiVercel,
+  csharp: SiSharp,
+  unity: SiUnity,
+  svelte: SiSvelte,
   python: SiPython,
+  opencv: SiOpencv,
+  mediapipe: SiMediapipe,
+  docker: SiDocker,
 };
 
 const Projects = () => {
@@ -120,7 +126,6 @@ const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              {/* Project Title and Description */}
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-white mb-2">
                   {project.title}
@@ -128,7 +133,6 @@ const Projects = () => {
                 <p className="text-gray-400">{project.description}</p>
               </div>
 
-              {/* GitHub and Live Demo Links */}
               <div className="flex items-center space-x-4 mb-6 min-h-[24px]">
                 {project.github ? (
                   <motion.a
@@ -143,7 +147,7 @@ const Projects = () => {
                     <Github className="h-5 w-5" />
                   </motion.a>
                 ) : (
-                  <div className="w-5 h-5"></div> // Placeholder to maintain height
+                  <div className="w-5 h-5"></div>
                 )}
                 {project.live ? (
                   <motion.a
@@ -158,11 +162,10 @@ const Projects = () => {
                     <ExternalLink className="h-5 w-5" />
                   </motion.a>
                 ) : (
-                  <div className="w-5 h-5"></div> // Placeholder to maintain height
+                  <div className="w-5 h-5"></div>
                 )}
               </div>
 
-              {/* Framework Icons - Ensures consistent alignment at the bottom */}
               <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-white/10">
                 {project.frameworks.map((framework) => {
                   const Icon = frameworkIcons[framework];
