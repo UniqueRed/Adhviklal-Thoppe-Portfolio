@@ -2,11 +2,9 @@ import Header from "@/app/components/Header";
 import Hero from "@/app/components/Hero";
 import Projects from "@/app/components/Projects";
 import Skills from "@/app/components/Skills";
-import Contact from "@/app/components/Contact";
 import Footer from "@/app/components/Footer";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import MatrixRain from "./components/MatrixRain";
 
 config.autoAddCss = false;
 

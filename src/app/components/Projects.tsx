@@ -112,7 +112,7 @@ const Projects = () => {
           Projects
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div
               key={project.title}
               className="group relative flex flex-col justify-between h-full bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-6 hover:shadow-[0px_0px_50px_10px_rgba(255,255,255,0.1)] transition-all duration-300"
